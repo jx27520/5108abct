@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale-Up and Commercialization of Off-the-Shelf Allogeneic CAR-T</title>
+    <!-- 引入外部资源 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <style>
+        :root {
+            --polyU-red: #A8071A;
+            --polyU-blue: #00205B;
+            --polyU-light: #F5F7FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --highlight: #D92B2B;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #FFFFFF;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        /* 侧边导航 */
+        .sidebar-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+            background-color: var(--polyU-blue);
+            padding: 2rem 0;
+            overflow-y: auto;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .sidebar-nav .logo {
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        .sidebar-nav .logo h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        .sidebar-nav .nav-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar-nav .nav-list li {
+            margin-bottom: 0.2rem;
+        }
+        .sidebar-nav .nav-list li a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav .nav-list li a:hover,
+        .sidebar-nav .nav-list li a.active {
+            background-color: rgba(255,255,255,0.1);
+            color: #FFFFFF;
+            border-left: 3px solid var(--polyU-red);
+        }
+        /* 主内容区 */
+        .main-content {
+            margin-left: 260px;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        /* 封面页 */
+        .cover-section {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--polyU-blue) 0%, #003080 100%);
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .cover-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            max-width: 1200px;
+            line-height: 1.3;
+        }
+        .cover-section h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 900px;
+        }
+        .cover-section .cover-info {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.85;
+        }
+        .cover-section .scroll-tip {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+        /* 通用章节样式 */
+        .section {
+            padding: 4rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--polyU-blue);
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--polyU-red);
+        }
+        .section-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--polyU-blue);
+            margin: 1.8rem 0 1rem;
+        }
+        /* 卡片样式 */
+        .data-card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            height: 100%;
+        }
+        .data-card h5 {
+            color: var(--polyU-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .highlight-card {
+            background: linear-gradient(135deg, var(--polyU-blue) 0%, var(--polyU-red) 100%);
+            color: #FFFFFF;
+        }
+        .highlight-card h5 {
+            color: #FFFFFF;
+        }
+        .num-highlight {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--highlight);
+            line-height: 1.2;
+        }
+        .num-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+        /* 表格样式 */
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .table-custom thead th {
+            background-color: var(--polyU-blue);
+            color: #FFFFFF;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #dee2e6;
+        }
+        .table-custom tbody td {
+            padding: 0.7rem 1rem;
+            border: 1px solid #dee2e6;
+        }
+        .table-custom tbody tr:nth-child(even) {
+            background-color: var(--polyU-light);
+        }
+        /* 列表样式 */
+        .custom-list li {
+            margin-bottom: 0.6rem;
+            list-style: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .custom-list li::before {
+            content: "\f058";
+            font-family: "FontAwesome";
+            color: var(--polyU-red);
+            position: absolute;
+            left: 0;
+        }
+        /* 双列对比 */
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .compare-col {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .compare-col.left {
+            background-color: #FFF5F5;
+            border: 1px solid var(--polyU-red);
+        }
+        .compare-col.right {
+            background-color: #F0F7FF;
+            border: 1px solid var(--polyU-blue);
+        }
+        /* 页脚致谢 */
+        .footer-section {
+            background-color: var(--polyU-blue);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .footer-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .footer-section p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        /* 移动端适配 */
+        @media (max-width: 992px) {
+            .sidebar-nav {
+                left: -260px;
+            }
+            .sidebar-nav.active {
+                left: 0;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .mobile-menu-btn {
+                position: fixed;
+                top: 1rem;
+                left: 1rem;
+                z-index: 1001;
+                background-color: var(--polyU-blue);
+                color: #FFFFFF;
+                border: none;
+                border-radius: 4px;
+                padding: 0.5rem 0.8rem;
+                font-size: 1.2rem;
+            }
+            .cover-section h1 {
+                font-size: 1.8rem;
+            }
+            .cover-section h3 {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 2rem 1.5rem;
+            }
+            .compare-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 移动端菜单按钮 -->
+    <button class="mobile-menu-btn d-lg-none" id="menuBtn">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- 侧边导航栏 -->
+    <nav class="sidebar-nav" id="sidebar">
+        <div class="logo">
+            <h2>THE HONG KONG<br>POLYTECHNIC UNIVERSITY</h2>
+            <h4>香港理工大學</h4>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#cover" class="nav-link active">Cover</a></li>
+            <li><a href="#agenda" class="nav-link">Agenda</a></li>
+            <li><a href="#trend" class="nav-link">1. Trend & Sub-sector</a></li>
+            <li><a href="#market" class="nav-link">2. Market Analysis</a></li>
+            <li><a href="#demand" class="nav-link">3. Demand Identification</a></li>
+            <li><a href="#science" class="nav-link">4. Scientific Foundations</a></li>
+            <li><a href="#competitive" class="nav-link">5. Competitive Landscape</a></li>
+            <li><a href="#target" class="nav-link">6. Target Company</a></li>
+            <li><a href="#duediligence" class="nav-link">7. Due Diligence</a></li>
+            <li><a href="#risk" class="nav-link">8. Risk & Mitigation</a></li>
+            <li><a href="#financial" class="nav-link">9. Financial Metrics</a></li>
+            <li><a href="#decision" class="nav-link">10. Investment Decision</a></li>
+            <li><a href="#thanks" class="nav-link">Thanks</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容区 -->
+    <div class="main-content">
+        <!-- 封面页 -->
+        <section class="cover-section" id="cover">
+            <h1>Scale-Up and Commercialization of Off-the-Shelf Allogeneic CAR-T</h1>
+            <h3>Enhancing Accessibility and Reducing Costs in Cancer and Autoimmune Therapies</h3>
+            <p class="cover-info">Course Lecturer: Fred Li</p>
+            <p class="cover-info">14th April, 2026</p>
+            <p class="cover-info mt-4">THE HONG KONG POLYTECHNIC UNIVERSITY</p>
+            <div class="scroll-tip">
+                <i class="fa fa-chevron-down fa-2x"></i>
+            </div>
+        </section>
+
+        <!-- 目录页 -->
+        <section class="section" id="agenda">
+            <h2 class="section-title">Agenda</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">01</span> Trend & Sub-sector</h5>
+                        <p>Industry landscape, core competitive moat and structural advantages of allogeneic CAR-T</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">02</span> Market Analysis</h5>
+                        <p>Global & regional market size, growth rate, regulatory and reimbursement environment</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">03</span> Demand Identification</h5>
+                        <p>Unmet medical needs, demand drivers and target patient population</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">04</span> Scientific Foundations</h5>
+                        <p>Core gene editing strategies, technical mechanisms and clinical validation</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">05</span> Competitive Landscape</h5>
+                        <p>Global key players, business models and pipeline strategies</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">06</span> Target Company</h5>
+                        <p>Bioheng/Imviva core advantages, platform, pipeline and team</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">07</span> Due Diligence</h5>
+                        <p>Technical IP, legal compliance, financial and equity structure due diligence</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">08</span> Risk & Mitigation</h5>
+                        <p>Core risk assessment and targeted mitigation strategies</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card">
+                        <h5><span class="num-highlight">09</span> Financial Metrics</h5>
+                        <p>Valuation approach, rNPV calculation and milestone value inflection points</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="data-card highlight-card">
+                        <h5><span class="num-highlight" style="color:#FFFFFF;">10</span> Final Investment Decision</h5>
+                        <p>Investment verdict, strategic terms and exit strategy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 01 Trend & Sub-sector -->
+        <section class="section" id="trend" style="background-color: var(--polyU-light);">
+            <h2 class="section-title">01 Trend & Sub-sector</h2>
+            <h3 class="section-subtitle">Overview of the Industry Landscape</h3>
+            <ul class="custom-list">
+                <li><strong>Core Competitive Moat</strong>: Competition has shifted from CAR design to Gene Editing Platforms (CRISPR, TALEN). Survival depends on overcoming GvHD (safety) and HvG (durability).</li>
+                <li><strong>Market Development Stage</strong>: The sector is predominantly in the Clinical Stage. It represents a high-potential blue ocean heavily backed by Venture Capital and Big Pharma partnerships.</li>
+                <li><strong>Strategic Imperative</strong>: For Biopharmaceutical commercialization, clinical efficacy must be balanced with Scalable Manufacturing (CMC) to achieve viable profit margins.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Autologous vs Allogeneic CAR-T: Structural Comparison</h3>
+            <div class="compare-row">
+                <div class="compare-col left">
+                    <h5>Structural Bottlenecks of Autologous CAR-T</h5>
+                    <ul class="custom-list">
+                        <li><strong>Long Production Cycle</strong>: 3-4 weeks, causing treatment delays</li>
+                        <li><strong>High Cost</strong>: COGS $100-150K/patient, List price $375-475K</li>
+                        <li><strong>Limited Capacity</strong>: Difficult to scale with individualized manufacturing</li>
+                    </ul>
+                </div>
+                <div class="compare-col right">
+                    <h5>Disruptive Advantages of Allogeneic CAR-T</h5>
+                    <ul class="custom-list">
+                        <li><strong>Off-the-Shelf Model</strong>: Immediate availability, no waiting time; 100+ doses per batch</li>
+                        <li><strong>Cost Reduction via Scale</strong>: Projected COGS $20-40K/patient, 50%-70% cost reduction</li>
+                        <li><strong>Indication Expansion</strong>: Applicable to solid tumors and repeat dosing scenarios</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 Market Analysis -->
+        <section class="section" id="market">
+            <h2 class="section-title">02 Market Analysis</h2>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Global Market Growth</h5>
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <div class="num-highlight">15.9%</div>
+                                <div class="num-desc">Global CAR-T Market CAGR (2026-2033)</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="num-highlight">9.4%</div>
+                                <div class="num-desc">Allogeneic T Cell Therapy CAGR (2026-2030)</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul class="custom-list">
+                            <li>2026 Allogeneic T Cell Therapy Market Size: $1.38 billion</li>
+                            <li>2030 Projected Market Size: $1.98 billion</li>
+                            <li>China CAR-T Market 2025 Forecast: ¥78.5-120 billion</li>
+                            <li>China CAR-T Market 2030E: ¥289 billion</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Regional Market Landscape</h5>
+                        <ul class="custom-list">
+                            <li><strong>North America</strong>: 61.1% of global CAR-T market share in 2025 (largest region), most approved products and leading infrastructure</li>
+                            <li><strong>Europe</strong>: Mature treatment systems, innovative outcomes-based payment models, sustained investment from top pharma</li>
+                            <li><strong>Asia-Pacific</strong>: Fastest growth (CAR-T CAGR ~22%+ 2026-2033), China as regional leader with large patient pool and policy support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Regulatory Environment</h5>
+                        <p>Major markets use accelerated approval pathways to advance projects with significant clinical benefit:</p>
+                        <ul class="custom-list">
+                            <li>FDA: RMAT, Breakthrough Therapy, Orphan Drug Designation</li>
+                            <li>NMPA: Breakthrough Therapy, Priority Review</li>
+                            <li>EMA: PRIME, Orphan Medicinal Product Designation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Pricing & Reimbursement</h5>
+                        <ul class="custom-list">
+                            <li>US/Europe Autologous CAR-T: $375K-$475K per treatment, covered by Medicare/Medicaid + commercial insurance</li>
+                            <li>China Autologous CAR-T: ~¥1M per treatment, partial coverage after NRDL negotiations</li>
+                            <li>Payers' focus on cost-effectiveness opens significant room for lower-cost allogeneic options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Global CAR-T Competitive Pipeline Landscape</h3>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Company</th>
+                        <th>Platform</th>
+                        <th>Target</th>
+                        <th>Phase</th>
+                        <th>Key Indication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cema-cel</td>
+                        <td>Allogene Therapeutics</td>
+                        <td>Allogeneic</td>
+                        <td>CD19</td>
+                        <td>Phase II</td>
+                        <td>Lymphoma (MRD-guided)</td>
+                    </tr>
+                    <tr>
+                        <td>CTX112</td>
+                        <td>CRISPR Therapeutics</td>
+                        <td>CRISPR Allogeneic</td>
+                        <td>CD19</td>
+                        <td>Phase I</td>
+                        <td>SLE, Lymphoma</td>
+                    </tr>
+                    <tr>
+                        <td>ALLO-329</td>
+                        <td>Allogene Therapeutics</td>
+                        <td>Allogeneic</td>
+                        <td>CD19/CD70</td>
+                        <td>Phase I</td>
+                        <td>Autoimmune disease</td>
+                    </tr>
+                    <tr>
+                        <td>FT819</td>
+                        <td>Fate Therapeutics</td>
+                        <td>iPSC-derived</td>
+                        <td>CD19</td>
+                        <td>Phase I</td>
+                        <td>SLE, Lupus nephritis</td>
+                    </tr>
+                    <tr>
+                        <td>P-BCMA-ALLO1</td>
+                        <td>Poseida/Roche</td>
+                        <td>Allogeneic</td>
+                        <td>BCMA</td>
+                        <td>Phase I</td>
+                        <td>Multiple Myeloma</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 03 Demand Identification -->
+        <section class="section" id="demand" style="background-color: var(--polyU-light);">
+            <h2 class="section-title">03 Demand Identification</h2>
+            <h3 class="section-subtitle">Unmet Medical Needs of Autologous CAR-T</h3>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Treatment Window Missing</h5>
+                        <ul class="custom-list" style="padding-left:0;">
+                            <li>41% of referred patients did not receive CAR-T therapy</li>
+                            <li>34% lost opportunity due to disease progression</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Extremely Low Accessibility</h5>
+                        <ul class="custom-list" style="padding-left:0;">
+                            <li>30-40% of patients cannot yield viable T cells</li>
+                            <li>Elderly patients & multi-line treated patients are excluded</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Unsustainable Costs</h5>
+                        <ul class="custom-list" style="padding-left:0;">
+                            <li><5% of eligible patients worldwide can afford treatment</li>
+                            <li>Total cost per patient: $700K-$1M (US)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Efficacy & Safety Gaps</h5>
+                        <ul class="custom-list" style="padding-left:0;">
+                            <li>1-year recurrence rate: 30-50%</li>
+                            <li>Grade 3+ CRS incidence: 5-30%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Key Demand Drivers</h3>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Epidemiology-driven</h5>
+                        <p>Global ageing + rising incidence of hematological malignancies; wide treatment gap in developing countries</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Payment-driven</h5>
+                        <p>US CMS expands coverage; Chinese CAR-T added to commercial insurance; payers' value-based purchasing</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Clinically-driven</h5>
+                        <p>Treatment line advancement (3rd→2nd→1st); 15% of patients require immediate intervention; efficacy validated</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="data-card">
+                        <h5>Technology-driven</h5>
+                        <p>CRISPR TCR knockout eliminates GvHD; iPSC-derived endless supply; China's glycosyl shield breakthrough</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Target Patient Population</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Disease Burden</h5>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Indication</th>
+                                    <th>Unable to tolerate autologous therapy</th>
+                                    <th>New cases</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>r/r LBCL</td>
+                                    <td>40,000</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>r/r ALL</td>
+                                    <td>22,400</td>
+                                    <td>64,000</td>
+                                </tr>
+                                <tr>
+                                    <td>r/r MM</td>
+                                    <td>150,400</td>
+                                    <td>188,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Target Audience Tiering</h5>
+                        <ul class="custom-list">
+                            <li><strong>Tier 1 (Core)</strong>: Patients unable to collect cells / with rapid disease progression</li>
+                            <li><strong>Tier 2 (Secondary)</strong>: Patients relapsed after autologous CAR-T / unable to afford costs</li>
+                            <li><strong>Tier 3 (Potential)</strong>: Patients in 2nd/1st line treatment as indication expands</li>
+                        </ul>
+                        <hr>
+                        <p>China price target: ¥300,000-500,000 per dose, out-of-pocket cost ~¥40,000 after insurance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 Scientific Foundations -->
+        <section class="section" id="science">
+            <h2 class="section-title">04 Scientific Foundations</h2>
+            <h3 class="section-subtitle">Core Gene Editing Strategies & Biological Functions</h3>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Technical Strategy</th>
+                        <th>Biological Function</th>
+                        <th>Core Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CD19/CD22 dual targeting</td>
+                        <td>B-cell lineage antigens expressed on B-cell malignancies</td>
+                        <td>Addresses antigen escape, reducing relapse risk in B-cell hematological malignancies</td>
+                    </tr>
+                    <tr>
+                        <td>TRAC (TCRα) knockout</td>
+                        <td>Mediates donor T-cell recognition of host antigens</td>
+                        <td>Eliminates donor T-cell mediated GvHD risk</td>
+                    </tr>
+                    <tr>
+                        <td>CD52 knockout + anti-CD52 conditioning</td>
+                        <td>Widely expressed on normal lymphocytes</td>
+                        <td>Addresses host-versus-graft rejection; protects UCAR-T cells</td>
+                    </tr>
+                    <tr>
+                        <td>dCK (deoxycytidine kinase) knockout</td>
+                        <td>Key enzyme for purine chemotherapeutic metabolism</td>
+                        <td>Renders UCAR-T resistant to chemotherapy, enabling multiple lymphodepletion rounds</td>
+                    </tr>
+                    <tr>
+                        <td>CD7 knockout</td>
+                        <td>Specifically expressed on normal T cells and NK cells</td>
+                        <td>Prevents "fratricide" among CD7-targeted UCAR-T cell populations</td>
+                    </tr>
+                    <tr>
+                        <td>4-1BB (CD137) Target Modification</td>
+                        <td>Highly expressed on activated host immune rejection cells</td>
+                        <td>Eliminates host rejection cells, prolongs UCAR-T in vivo survival</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-subtitle">Clinical Validation: CTA101 (First Domestic Off-the-Shelf UCAR-T)</h3>
+            <div class="data-card">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center">
+                        <div class="num-highlight">83.3%</div>
+                        <div class="num-desc">CR Rate on Day 28</div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Phase I Clinical Study Results (6 patients treated)</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="custom-list">
+                                    <li>No dose-limiting toxicity</li>
+                                    <li>No reported GvHD</li>
+                                    <li>No reported neurotoxicity</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="custom-list">
+                                    <li>No editing-associated genotoxicity</li>
+                                    <li>CRS occurred in all patients (no grade 3+)</li>
+                                    <li>Proven safety profile for platform validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 Competitive Landscape -->
+        <section class="section" id="competitive" style="background-color: var(--polyU-light);">
+            <h2 class="section-title">05 Competitive Landscape</h2>
+            <h3 class="section-subtitle">Strategic Player Map</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="data-card">
+                        <h5>GLOBAL ESTABLISHED LEADERS</h5>
+                        <hr>
+                        <h6>Allogene Therapeutics (NASDAQ: ALLO)</h6>
+                        <p>Platform: TALEN Gene Editing<br>Key Asset: Cema-cel (CD19, Phase 2)<br>Highlight: Pure-play leader in CMC Vertical Integration</p>
+                        <hr>
+                        <h6>CRISPR Therapeutics (NASDAQ: CRSP)</h6>
+                        <p>Platform: CRISPR/Cas9 (Nobel Tech)<br>Key Asset: CTX112 (CD19, Phase 1/2)<br>Highlight: Highest editing efficiency for HvG prevention</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-card">
+                        <h5>DISRUPTIVE TECH & LOW-COST</h5>
+                        <hr>
+                        <h6>Poseida Therapeutics (NASDAQ: PSTX)</h6>
+                        <p>Platform: piggyBac (Non-Viral)<br>Key Asset: P-BCMA-ALLO1 (Phase 1)<br>Highlight: Strategic alliance with Roche for mass Scale-Up</p>
+                        <hr>
+                        <h6>BRL Medicine (邦耀生物)</h6>
+                        <p>Platform: Non-viral PD1-TSRM<br>Key Asset: BRL-201 (CD19, Phase 1)<br>Highlight: High gross margin via site-specific integration</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-card">
+                        <h5>CHINA INNOVATION POWER</h5>
+                        <hr>
+                        <h6>Bioheng (北恒生物)</h6>
+                        <p>Platform: Universal Cell (CD7 focus)<br>Key Asset: CTD402 (FDA IND Cleared)<br>Highlight: Proprietary tech to solve T-cell fratricide</p>
+                        <hr>
+                        <h6>CARSGEN (科济药业, HKEX:2171)</h6>
+                        <p>Platform: THANK-u (GvHD/HvG Solution)<br>Key Asset: CT053 (Solid Tumor Focus)<br>Highlight: Globalized manufacturing with high quality standards</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Business Models for Commercial Scale-Up</h5>
+                        <div class="compare-row" style="grid-template-columns: 1fr 1fr; gap:1rem;">
+                            <div>
+                                <h6>In-House GMP Manufacturing</h6>
+                                <p><strong>Examples</strong>: Allogene, CARSGEN</p>
+                                <ul class="custom-list" style="padding-left:0; font-size:0.9rem;">
+                                    <li>Heavy CapEx on facility investment</li>
+                                    <li>High clinical burn rate</li>
+                                    <li>Retains 100% margins & controls Scale-Up</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Platform Licensing (Partnering)</h6>
+                                <p><strong>Examples</strong>: Poseida, Start-ups</p>
+                                <ul class="custom-list" style="padding-left:0; font-size:0.9rem;">
+                                    <li>License tech to Big Pharma</li>
+                                    <li>Upfront milestones & royalties revenue</li>
+                                    <li>De-risks trials; avoids massive CapEx</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Pipeline Strategies & Target Selection</h5>
+                        <div class="compare-row" style="grid-template-columns: 1fr 1fr; gap:1rem;">
+                            <div>
+                                <h6>Hematological "Red Ocean"</h6>
+                                <p><strong>Targets</strong>: CD19, BCMA</p>
+                                <ul class="custom-list" style="padding-left:0; font-size:0.9rem;">
+                                    <li>Highly saturated market</li>
+                                    <li>Lower biological risk</li>
+                                    <li>Intense competition</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Solid Tumors "Blue Ocean"</h6>
+                                <p><strong>Targets</strong>: CD70, CD7, Claudin 18.2</p>
+                                <ul class="custom-list" style="padding-left:0; font-size:0.9rem;">
+                                    <li>Massive unmet medical need</li>
+                                    <li>High risk, high reward</li>
+                                    <li>Barrier: Tumor microenvironment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 Target Company Identification -->
+        <section class="section" id="target">
+            <h2 class="section-title">06 Target Company Identification: Bioheng/Imviva</h2>
+            <div class="row g-4 mb-4">
+                <div class="col-md-12">
+                    <div class="data-card highlight-card">
+                        <h5>Core Investment Logic</h5>
+                        <h3 class="text-center mt-3 mb-3">Breakthrough in CD7 for Hematologic Malignancies + Differentiated Blue Ocean Strategy = Dual-Engine Growth</h3>
+                        <p class="text-center">Proven clinical efficacy, high commercial certainty, full-indication pipeline layout</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>5th-Gen ANSWER™ Platform (Core Moat)</h5>
+                        <ul class="custom-list">
+                            <li>CRISPR-edited, TCR/HLA KO, higher efficiency than TALEN-based platforms</li>
+                            <li>Dual strategy: Synthetic ANSWER™ receptor + targeted ablation of immune rejection mediator</li>
+                            <li>Addresses both GvHD and HvG rejection via T & NK cell immune evasion</li>
+                            <li>Three-fold impact: Enhanced activity, Prolonged persistence, Immune system preservation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Leadership Team</h5>
+                        <ul class="custom-list">
+                            <li><strong>CEO Lu Han</strong>: Top-tier finance + biotech CDMO experience</li>
+                            <li><strong>CSO Jiangtao Ren</strong>: CAR-T pioneer from Carl June lab, UCAR-T patent inventor</li>
+                            <li><strong>CTO Yajin Ni</strong>: 25+ years CMC experience, Allogene/Pfizer veteran, US/EU filing expert</li>
+                            <li>Global medical team with ex-Wugen/GSK/Atara executives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Pipeline Portfolio Powered by ANSWER™ Platform</h3>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>PROGRAM</th>
+                        <th>TARGET</th>
+                        <th>INDICATION</th>
+                        <th>STAGE</th>
+                        <th>HIGHLIGHT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CTD402</td>
+                        <td>CD7</td>
+                        <td>T-ALL/LBL</td>
+                        <td>Global Phase Ib/II</td>
+                        <td>FDA RMAT, Orphan Drug, RPD; CR 64.1%, MRD- 91.7% (ASH 2023)</td>
+                    </tr>
+                    <tr>
+                        <td>CTA313</td>
+                        <td>CD19/BCMA</td>
+                        <td>Autoimmune (SLE, LN)</td>
+                        <td>Phase I</td>
+                        <td>100% SRI-4 Response; Deep Immune Reset</td>
+                    </tr>
+                    <tr>
+                        <td>RD07</td>
+                        <td>CLDN18.2</td>
+                        <td>Gastric / Pancreatic Cancer</td>
+                        <td>Phase I/II</td>
+                        <td>Safe & Tolerable; No DLT observed to date</td>
+                    </tr>
+                    <tr>
+                        <td>CTF50X</td>
+                        <td>TAA</td>
+                        <td>Acute Myeloid Leukemia (AML)</td>
+                        <td>Discovery</td>
+                        <td>Next-Gen Off-the-shelf Myeloid Asset</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Manufacturing Capabilities</h5>
+                        <ul class="custom-list">
+                            <li>7,000㎡ high-standard GMP manufacturing center in Nanjing</li>
+                            <li>Compliant with both NMPA and FDA standards</li>
+                            <li>Domestic substitution of key raw materials, building cost barriers</li>
+                            <li>End-to-end CMC capabilities from process development to commercial production</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Supply Chain Ecosystem</h5>
+                        <ul class="custom-list">
+                            <li>Co-develop key CGT raw materials with domestic partners</li>
+                            <li>GMP-grade Cas9 enzyme and process development support</li>
+                            <li>End-to-end lentiviral CMC services</li>
+                            <li>GLP-compliant animal models and single-cell sequencing validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 Due Diligence -->
+        <section class="section" id="duediligence" style="background-color: var(--polyU-light);">
+            <h2 class="section-title">07 Due Diligence</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="data-card">
+                        <h5>Technical & IP Due Diligence</h5>
+                        <div class="text-center mb-3">
+                            <div class="num-highlight">216</div>
+                            <div class="num-desc">Total Patent Filings (Unique Families)</div>
+                        </div>
+                        <div class="row text-center g-2">
+                            <div class="col-6">
+                                <div class="num-highlight" style="font-size:1.5rem;">124</div>
+                                <div class="num-desc">Active Patent Families</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="num-highlight" style="font-size:1.5rem;">66.7%</div>
+                                <div class="num-desc">Overseas Filings</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul class="custom-list">
+                            <li>87.04% patents for platform/general technology, full-chain coverage</li>
+                            <li>Core patent assets granted in Q1 2026 for CLDN18.2, CD30/BCMA, novel CAR domain</li>
+                            <li>Immune cell + CAR-T therapies account for 38.4% of portfolio</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-card">
+                        <h5>Legal & Compliance Due Diligence</h5>
+                        <ul class="custom-list">
+                            <li>100% compliance with PRC Company Law; no major administrative penalties in past 3 years</li>
+                            <li>All clinical trials have full IRB/Ethics Committee approvals, comply with HGRAC and GCP standards</li>
+                            <li><strong>Doer Bio Dispute</strong>: De-risked contract payment dispute, no patent infringement risk; core clinical data protected</li>
+                            <li><strong>FTO Verification</strong>: Core pipeline RD07 uses 100% proprietary sequence, no infringement confirmed via 1:1 amino acid alignment</li>
+                            <li>Clean, independent and legally robust IP chain</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-card">
+                        <h5>Financial & Equity Due Diligence</h5>
+                        <ul class="custom-list">
+                            <li>Cumulative financing: >¥620 million, backed by Hillhouse Capital, SCGC, Simcere and other top-tier investors</li>
+                            <li>Standard Red Chip / VIE structure, compliant pathway for HKEX/NASDAQ listing</li>
+                            <li>Core assets centralized in domestic OPCO, operational risks isolated</li>
+                            <li>Dual-entity operations: Nanjing R&D/Manufacturing Base + US Boston Global Clinical Center</li>
+                            <li>Monthly cash burn: ~¥35-45 million, lower than comparable peers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 Risk & Mitigation -->
+        <section class="section" id="risk">
+            <h2 class="section-title">08 Risk Assessment and Mitigation</h2>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Risk Category</th>
+                        <th>Core Risks</th>
+                        <th>Targeted Mitigation Strategies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Market & Legal</strong></td>
+                        <td>
+                            1. Regulatory & Reimbursement Uncertainty<br>
+                            2. Pricing pressure from medical insurance negotiation<br>
+                            3. IP licensing dispute risks
+                        </td>
+                        <td>
+                            1. Prioritize FDA & NMPA breakthrough/orphan designations for core pipelines<br>
+                            2. Early engagement with regulators & payers, pre-submission meetings<br>
+                            3. Complete independent sequence development, add litigation indemnification clause in investment agreement
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Financial</strong></td>
+                        <td>
+                            1. High monthly cash burn<br>
+                            2. Heavy CAPEX for GMP commercial production<br>
+                            3. Contingent liabilities from litigation<br>
+                            4. Uncertain exit timeline & valuation volatility
+                        </td>
+                        <td>
+                            1. Litigation compensation deducted from valuation, borne by original shareholders<br>
+                            2. Strict cash flow controls, ensure ≥18 months cash runway<br>
+                            3. Diversify exit routes: IPO, M&A, share transfer backup option<br>
+                            4. Milestone-based capital deployment
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Operational & Technical</strong></td>
+                        <td>
+                            1. Off-target gene-editing effects<br>
+                            2. Manufacturing scalability & CMC consistency<br>
+                            3. Corporate governance instability<br>
+                            4. Key personnel turnover
+                        </td>
+                        <td>
+                            1. CMC & safety standardization, quantify editing efficiency & off-target rate<br>
+                            2. Accelerate pivotal clinical enrollment with adaptive trial design<br>
+                            3. Freeze shareholder changes, release all equity pledges before investment<br>
+                            4. 4-year service term & non-compete agreement for core team, 4-year equity vesting
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-subtitle">Investment Terms Design</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Milestone-based Payment Structure</h5>
+                        <p>Investment funds paid in 4 tranches, tied to clinical & operational milestones:</p>
+                        <ul class="custom-list">
+                            <li><strong>First Installment (30%)</strong>: Investment agreement signed; all equity pledges released; patent litigation settled</li>
+                            <li><strong>Second Installment (25%)</strong>: CTD402 Phase II enrollment completed; ORR/CR meets pre-defined endpoints</li>
+                            <li><strong>Third Installment (25%)</strong>: CTA313 Phase II data readout meets target; Orphan/breakthrough therapy designation obtained</li>
+                            <li><strong>Fourth Installment (20%)</strong>: Phase III clinical trial initiated / IND approved</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Anti-dilution and Repurchase Rights</h5>
+                        <ul class="custom-list">
+                            <li>Full ratchet / weighted average anti-dilution provision to avoid equity dilution from low-price financing</li>
+                            <li>Clearly defined repurchase trigger events:
+                                <ul>
+                                    <li>Core patent invalidation / major litigation affecting pipeline</li>
+                                    <li>Falsification/concealment of clinical data</li>
+                                    <li>Failure to complete IPO within 5 years</li>
+                                </ul>
+                            </li>
+                            <li>Repurchase price: 8%-10% annual compound interest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 09 Financial Metrics - Valuation Approach -->
+        <section class="section" id="financial" style="background-color: var(--polyU-light);">
+            <h2 class="section-title">09 Financial Metrics - Valuation Approach</h2>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Comparable Company Analysis</h5>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Dimension</th>
+                                    <th>Gracell (GRCL)</th>
+                                    <th>OriCell</th>
+                                    <th>Imviva Biotech</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>R&D Stage</td>
+                                    <td>Phase II/III</td>
+                                    <td>Series C1</td>
+                                    <td>Phase I/II</td>
+                                </tr>
+                                <tr>
+                                    <td>Monthly Cash Burn</td>
+                                    <td>¥50-60M</td>
+                                    <td>¥40-55M</td>
+                                    <td>¥35-45M</td>
+                                </tr>
+                                <tr>
+                                    <td>Core Strategy</td>
+                                    <td>Autologous CAR-T</td>
+                                    <td>Solid Tumor CAR-T</td>
+                                    <td>Off-the-Shelf Allogeneic CAR-T</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Core Valuation Assumptions</h5>
+                        <ul class="custom-list">
+                            <li>Discount Rate (WACC): 13% (standard for pre-commercial Chinese biotech)</li>
+                            <li>Perpetual Growth Rate: 2.5%</li>
+                            <li>Patent Expiry: 2042</li>
+                            <li>Clinical Approval Probability (LOA): CTD402 75%; Phase I assets 35-50%; preclinical 10%</li>
+                            <li>Global peak sales: CTD402 US$1.8 billion; full pipeline US$2.0 billion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Pipeline-by-Pipeline rNPV Valuation Calculation</h3>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>PROGRAM</th>
+                        <th>TARGET</th>
+                        <th>STAGE</th>
+                        <th>LOA</th>
+                        <th>Single Asset rNPV (RMB Bn)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CTD402</td>
+                        <td>CD7</td>
+                        <td>Global Phase Ib/II</td>
+                        <td>75%</td>
+                        <td>4.2</td>
+                    </tr>
+                    <tr>
+                        <td>CTA101</td>
+                        <td>CD7 UCAR-T</td>
+                        <td>Phase I Completed</td>
+                        <td>50%</td>
+                        <td>1.3</td>
+                    </tr>
+                    <tr>
+                        <td>RD06-03</td>
+                        <td>CD19 UCAR-T</td>
+                        <td>Registr. Ph II</td>
+                        <td>35%</td>
+                        <td>0.5</td>
+                    </tr>
+                    <tr>
+                        <td>CTA313</td>
+                        <td>CD19/BCMA</td>
+                        <td>Phase I</td>
+                        <td>30%</td>
+                        <td>0.3</td>
+                    </tr>
+                    <tr>
+                        <td>CTF50X</td>
+                        <td>TAA</td>
+                        <td>Discovery</td>
+                        <td>10%</td>
+                        <td>0.2</td>
+                    </tr>
+                    <tr>
+                        <td>Preclinical Early Pipeline</td>
+                        <td>-</td>
+                        <td>Pre-IND</td>
+                        <td>10%</td>
+                        <td>0.2</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Net Cash</td>
+                        <td>0.55</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><strong>Total Valuation (Central Value)</strong></td>
+                        <td><strong>7.05 RMB Bn</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-subtitle">Valuation Step-up Process by Key Milestones</h3>
+            <div class="data-card">
+                <div class="row text-center g-4">
+                    <div class="col-md-2 col-sm-4">
+                        <div class="num-highlight">¥2.75 Bn</div>
+                        <div class="num-desc">2022 (Base)<br>First UCAR-T approved by CDE</div>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="num-highlight">¥6.0 Bn</div>
+                        <div class="num-desc">2025 (Global)<br>FDA Designation & ASH data</div>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="num-highlight">¥7.4 Bn</div>
+                        <div class="num-desc">2026 (Current)<br>US clinical launch</div>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="num-highlight">¥10.0 Bn</div>
+                        <div class="num-desc">2027E (NDA)<br>China NDA submission</div>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="num-highlight">¥14.5 Bn</div>
+                        <div class="num-desc">2028E (Launch)<br>Global commercial launch</div>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="num-highlight">5.0x-7.5x</div>
+                        <div class="num-desc">Expected Valuation Multiple<br>From entry to exit</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 Final Investment Decision -->
+        <section class="section" id="decision">
+            <h2 class="section-title">10 Final Investment Decision</h2>
+            <div class="data-card highlight-card text-center p-5">
+                <h2 class="mb-4">FINAL INVESTMENT VERDICT</h2>
+                <h3 class="mb-4">INVEST IN BIOHENG/IMVIVA SERIES C ROUND</h3>
+                <p class="fs-5 mb-4">Its dominant allogeneic CD7 pipeline, first-in-class autoimmune assets, FDA RMAT designation and dual-entity global strategy justify its leadership position in next-generation cell therapies.</p>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Exit Strategy</h5>
+                        <ul class="custom-list">
+                            <li><strong>Primary Exit (M&A)</strong>: Positioned as a highly attractive acquisition target for Big Pharma (top pharma actively seeking allogeneic CAR-T assets)</li>
+                            <li><strong>Secondary Exit (IPO)</strong>: NASDAQ or HKEX 18A listing in 2027-2028 upon positive Phase II clinical data</li>
+                            <li><strong>Backup Exit</strong>: Equity transfer with agreed price after 3 years, guaranteed downside protection</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="data-card">
+                        <h5>Core Investment Highlights</h5>
+                        <ul class="custom-list">
+                            <li><strong>Triple-Core Pipeline</strong>: Hematological Malignancies + Autoimmune Diseases + Solid Tumor full layout</li>
+                            <li><strong>First-in-Class Platform</strong>: 5th-Gen ANSWER™ CRISPR platform solves core GvHD/HvG challenges</li>
+                            <li><strong>Best-in-Class Clinical Data</strong>: CTD402 CR 64.1%, MRD- 91.7%; CTA313 100% SRI-4 response</li>
+                            <li><strong>Cost Leadership</strong>: Scalable manufacturing with domestic supply chain, 50-70% cost reduction vs autologous CAR-T</li>
+                            <li><strong>De-risked IP & Compliance</strong>: Clean IP chain, 216 patent filings, fully compliant clinical operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 致谢页 -->
+        <section class="footer-section" id="thanks">
+            <h2>THANKS :)</h2>
+            <p>THE HONG KONG POLYTECHNIC UNIVERSITY</p>
+            <p class="mt-2">ABCT5108 Group 5 | 14th April, 2026</p>
+        </section>
+    </div>
+
+    <!-- JS脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // 导航链接高亮
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 点击导航关闭移动端菜单
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 992) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
