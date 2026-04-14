@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北恒生物 · Imviva | 通用型CAR-T全球领跑者 · 投资价值全景</title>
+    <!-- 字体与图标库 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f9ff;
+            color: #0b1e3a;
+            line-height: 1.5;
+            padding: 28px 24px;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* 动感光效 */
+        .hero-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-glow::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.08), transparent 70%);
+            z-index: 0;
+        }
+
+        .card-hover {
+            transition: all 0.25s ease;
+            border: 1px solid rgba(203, 213, 225, 0.4);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 35, 70, 0.12);
+            border-color: #bdd3ff;
+            background: white;
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 36px 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 12px 28px -8px rgba(0, 20, 50, 0.06);
+            border: 1px solid #eef2f6;
+            transition: box-shadow 0.3s;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .section-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(145deg, #2563eb, #1e40af);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 14px -4px rgba(37, 99, 235, 0.25);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .badge {
+            background: #e6f0ff;
+            color: #2563eb;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: #fafcff;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid #eef2f6;
+            transition: all 0.2s;
+        }
+
+        .stat-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0b1e3a;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: #475569;
+            font-weight: 500;
+            margin-top: 12px;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 16px 8px 10px 0;
+            font-weight: 600;
+            color: #334155;
+            border-bottom: 1.5px solid #e2e8f0;
+        }
+
+        td {
+            padding: 14px 8px 14px 0;
+            border-bottom: 1px solid #ecf1f7;
+            vertical-align: top;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef9c3 0%, #fef9c3 80%);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .tag {
+            background: #eef2ff;
+            border-radius: 30px;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            color: #1e3a8a;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+
+        .invest-grade {
+            background: #0b1e3a;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-weight: 700;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mt-4 {
+            margin-top: 24px;
+        }
+
+        .mb-2 {
+            margin-bottom: 12px;
+        }
+
+        .text-accent {
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 24px 0;
+        }
+
+        .ext-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(37, 99, 235, 0.4);
+            transition: border 0.2s;
+        }
+
+        .ext-link:hover {
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 40px;
+            background: transparent;
+            border: 1.5px solid #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .rolling-number {
+            display: inline-block;
+            animation: countUp 0.8s ease-out;
+        }
+
+        @keyframes countUp {
+            0% { opacity: 0; transform: translateY(8px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 1000px) {
+            .grid-2, .grid-3, .grid-4, .grid-5 {
+                grid-template-columns: 1fr;
+            }
+            body { padding: 16px; }
+        }
+
+        .vision-quote {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1e293b;
+            border-left: 4px solid #2563eb;
+            padding-left: 24px;
+            margin: 20px 0;
+        }
+
+        .milestone-timeline {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .milestone {
+            background: #f1f5f9;
+            border-radius: 40px;
+            padding: 8px 18px;
+            font-weight: 500;
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 24px;
+        }
+
+        .source-link {
+            font-size: 0.75rem;
+            margin-left: 6px;
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px dotted #93c5fd;
+        }
+        .source-link:hover { border-bottom: 1px solid; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ========= 品牌区 · 动态光效 ========= -->
+        <div class="hero-glow" style="margin-bottom: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; flex-wrap: wrap;">
+                <div>
+                    <div class="badge" style="margin-bottom: 16px; background: #2563eb; color: white;"><i class="fas fa-flask" style="margin-right: 6px;"></i>  
+                        <a href="https://www.bioheng.com/about.html" target="_blank" class="ext-link" style="color:white; border-bottom-color:rgba(255,255,255,0.4);">ANSWER® 第5代通用型CAR-T</a>
+                    </div>
+                    <h1 style="font-size: 3.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">
+                        <a href="https://www.bioheng.com" target="_blank" class="ext-link" style="color:#0b1e3a;">北恒生物</a><br>
+                        <span style="color: #2563eb;">Imviva Biotech</span>
+                    </h1>
+                    <div class="vision-quote">
+                        “让通用型CAR-T成为全球患者用得起的治愈方案”<br>
+                        <span style="font-size: 0.9rem; color: #64748b;">—— 现货型 · 低成本 · 全球化  <a href="https://www.bioheng.com/about.html" target="_blank" class="source-link">[官网]</a></span>
+                    </div>
+                    <div class="milestone-timeline">
+                        <a href="https://www.bioheng.com/" target="_blank"><span class="milestone"><i class="far fa-calendar-check"></i> 2025 FDA RMAT/孤儿药 <i class="fas fa-external-link-alt" style="font-size:10px;"></i></span></a>
+                        <span class="milestone"><i class="fas fa-building"></i> 7,500㎡ GMP基地</span>
+                        <span class="milestone"><i class="fas fa-globe"></i> 中美双报 · TENACITY-01</span>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    <div style="background: #0b1e3a; color: white; padding: 16px 28px; border-radius: 48px; box-shadow: 0 16px 30px -8px rgba(0,0,0,0.2);">
+                        <div style="font-size: 0.9rem; opacity: 0.8;">C轮目标估值</div>
+                        <div style="font-size: 2.8rem; font-weight: 800;">10-15亿<span style="font-size: 1.2rem;">$</span></div>
+                        <div style="margin-top: 6px;"><span class="badge" style="background: #fbbf24; color: #0b1e3a;">强烈推荐 · 增持</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 关键数据卡片（含原文链接） -->
+        <div class="grid-4" style="margin-bottom: 30px;">
+            <div class="stat-card card-hover">
+                <div class="stat-value"><span class="rolling-number">64.1</span>%</div>
+                <div class="stat-label"><i class="fas fa-dna" style="margin-right: 6px; color: #2563eb;"></i> CTD402 CR率 (T-ALL/LBL)</div>
+                <div style="margin-top: 8px; font-size:0.9rem;">MRD阴性率91.7% · <a href="https://ashpublications.org/blood/article/146/Supplement%201/4180/555893/CTD402-Allogeneic-CAR-t-manufacturing-that" target="_blank" class="source-link">ASH 2025</a> · FDA RMAT</div>
+            </div>
+            <div class="stat-card card-hover">
+                <div class="stat-value"><span class="rolling-number">100</span>%</div>
+                <div class="stat-label"><i class="fas fa-heartbeat"></i> CTA313 SRI-4应答 (SLE)</div>
+                <div style="margin-top: 8px; font-size:0.9rem;"><a href="https://www.emedclub.com/information/view/zSpVu58YthkxXs8zFMauE" target="_blank" class="source-link">ELM 2026 突破性摘要</a> · 73.7% LLDAS</div>
+            </div>
+            <div class="stat-card card-hover">
+                <div class="stat-value"><span class="rolling-number">5,000</span>+</div>
+                <div class="stat-label"><i class="fas fa-industry"></i> 年产能 (人份) · GMP</div>
+                <div style="margin-top: 8px; font-size:0.9rem;">成本≈自体1/10 <a href="https://www.njbpv.cn/index.php?m=content&c=index&a=show&catid=42&id=5350" target="_blank" class="source-link">[69]</a> · 扩产至19,000</div>
+            </div>
+            <div class="stat-card card-hover">
+                <div class="stat-value"><span class="rolling-number">216</span></div>
+                <div class="stat-label"><i class="fas fa-file-alt"></i> 授权/申请中专利</div>
+                <div style="margin-top: 8px; font-size:0.9rem;">62%权利要求>50项 · <a href="https://www.qcc.com/crun/c37c953e2c89d4a66637be78af2e0869.html" target="_blank" class="source-link">2026 Q1授权</a></div>
+            </div>
+        </div>
+
+        <!-- 平台 + 专利（增强链接） -->
+        <div class="grid-2">
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-microchip"></i></div>
+                    <h2><a href="https://www.bioheng.com/about.html" target="_blank" class="ext-link">ANSWER® 技术平台</a></h2>
+                </div>
+                <p style="margin-bottom: 20px;"><strong>第五代非病毒/CRISPR多重编辑：</strong>TRAC/CD52/CIITA/dCK敲除 + NK抑制配体，彻底解决GvHD与宿主排斥，实现“现货供应”。</p>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-right: 8px;"></i> TCR敲除 → 消除GvHD  <a href="https://www.phirda.com/artilce_32529.html" target="_blank" class="source-link">[21]</a></li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-right: 8px;"></i> HLA-I/II调控+CD52敲除 → 抵抗宿主清除</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-right: 8px;"></i> 4-1BB共刺激+γc胞内区 → 持久性强</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #2563eb; margin-right: 8px;"></i> 全封闭自动化生产 · 自主设计设备</li>
+                </ul>
+                <div style="background: #eef2ff; padding: 18px; border-radius: 24px; margin-top: 20px;">
+                    <span class="badge" style="background:#1e3a8a; color:white;">2026 Q1 新授权</span>
+                    <div style="margin-top: 14px;">靶向Claudin18.2纳米抗体 · CD30/BCMA双靶点 · 新型共刺激结构域  <a href="https://www.qcc.com/crun/c37c953e2c89d4a66637be78af2e0869.html" target="_blank" class="source-link">[14]</a></div>
+                </div>
+            </div>
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h2>全球专利布局</h2>
+                </div>
+                <div style="display: flex; gap: 28px; margin-bottom: 20px;">
+                    <div><span class="stat-value">216</span> <span style="color: #64748b;">唯一申请</span></div>
+                    <div><span class="stat-value">124</span> <span style="color: #64748b;">有效专利</span></div>
+                    <div><span class="stat-value">73</span> <span style="color: #64748b;">2021峰值</span></div>
+                </div>
+                <table>
+                    <tr><th>技术领域</th><th>占比</th></tr>
+                    <tr><td>免疫细胞技术</td><td>23.2%</td></tr>
+                    <tr><td>CAR-T细胞治疗</td><td>15.3%</td></tr>
+                    <tr><td>抗体技术</td><td>11.6%</td></tr>
+                    <tr><td>基因编辑</td><td>4.2%</td></tr>
+                </table>
+                <div class="mt-4 flex-between">
+                    <span class="tag"><i class="fas fa-globe-americas"></i> PCT 33% + 海外直接67%</span>
+                    <a href="https://jx27520.github.io/5108abct/ip-bioheng:imviva-CN.html" target="_blank" class="btn-outline" style="font-size:0.9rem;"><i class="fas fa-external-link-alt"></i> 详细专利分析报告</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心管线 + 临床里程碑（增强超链） -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-tablets"></i></div>
+                <h2>核心产品管线 & 关键临床数据</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>产品</th><th>靶点</th><th>适应症</th><th>阶段</th><th>关键疗效 / 认定 (附来源)</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CTD402</strong></td>
+                        <td>CD7</td>
+                        <td>R/R T-ALL/LBL</td>
+                        <td><span class="badge" style="background:#2563eb; color:white;">全球1b/2期</span></td>
+                        <td>CR 64.1% · MRD- 91.7% · <a href="https://www.bioheng.com/" target="_blank" class="source-link">FDA RMAT/孤儿药</a> · <a href="https://ashpublications.org/blood/article/146/Supplement%201/4180/555893/CTD402-Allogeneic-CAR-t-manufacturing-that" target="_blank" class="source-link">ASH口头报告</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>CTA313</strong></td>
+                        <td>CD19/BCMA</td>
+                        <td>SLE/LN</td>
+                        <td><span class="badge" style="background:#1e3a8a; color:white;">I/II期</span></td>
+                        <td>SRI-4 100% · 73.7% LLDAS · 无GvHD/ICANS · <a href="https://www.emedclub.com/information/view/zSpVu58YthkxXs8zFMauE" target="_blank" class="source-link">ELM突破性摘要</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>RD06-03</strong></td>
+                        <td>CD19</td>
+                        <td>R/R B-ALL</td>
+                        <td><span class="badge" style="background:#0f172a; color:white;">注册II期</span></td>
+                        <td>ORR 100% · MRD- 100% (ASCO 2025)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RD07</strong></td>
+                        <td>Claudin18.2</td>
+                        <td>胃癌/胰腺癌</td>
+                        <td>I/II期</td>
+                        <td>实体瘤探索 · 安全性良好</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CTA101</strong></td>
+                        <td>CD19</td>
+                        <td>B-ALL</td>
+                        <td>完成I期</td>
+                        <td>首个国内UCAR-T IND · CR 83.3% <a href="https://m.cphi.cn/news/show-197178.html" target="_blank" class="source-link">[95]</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="flex-between mt-4">
+                <div><span class="badge"><i class="fas fa-shield-alt"></i> 全管线无GvHD/严重ICANS · CRS 1-2级</span></div>
+                <div><span class="badge"><i class="fas fa-map-pin"></i> CTD402 美国8家中心招募中 (TENACITY-01)</span></div>
+            </div>
+        </div>
+
+        <!-- 新增：监管里程碑 & FDA利好（含原文链接） -->
+        <div class="grid-2">
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-gavel"></i></div>
+                    <h2>监管里程碑·FDA政策东风</h2>
+                </div>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>2025.10</strong> CTD402获FDA <a href="https://www.bioheng.com/" target="_blank" class="ext-link">RMAT认定</a> (T-ALL) </li>
+                    <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>2025.03</strong> FDA批准IND + <a href="https://www.njbpv.cn/index.php?a=show&c=index&catid=15&id=7911&m=content" target="_blank" class="ext-link">罕见儿科疾病认定(RPDD)</a></li>
+                    <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#2563eb;"></i> <strong>2026.01</strong> FDA放宽CGT的CMC要求 <a href="https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/flexible-requirements-cell-and-gene-therapies-advance-innovation" target="_blank" class="source-link">[119]</a> ，取消自体CAR-T REMS </li>
+                    <li style="margin-bottom: 16px;"><i class="fas fa-check-circle" style="color:#2563eb;"></i> EMA临床试验申请准备中，计划2026启动欧洲研究</li>
+                </ul>
+                <div class="highlight" style="display:inline-block; padding:6px 18px;">监管灵活化显著降低申报难度，加速全球化</div>
+            </div>
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+                    <h2>市场机遇 & 竞争定位</h2>
+                </div>
+                <div class="stat-value" style="font-size:2.2rem;">$75亿</div>
+                <div>2026全球CAR-T市场 (CAGR 30%+) <a href="https://www.globalgrowthinsights.com/market-reports/car-t-cell-therapy-market-101038" target="_blank" class="source-link">[110]</a></div>
+                <div style="margin-top: 20px;">通用型CAR-T占新增份额20-30%，成本降至自体1/10，可及性爆发。</div>
+                <hr>
+                <div><span class="text-accent"><i class="fas fa-users"></i> 未满足需求：</span>T-ALL/LBL缺乏有效疗法；SLE患者百万级。北恒为国内通用型CAR-T绝对龙头，对标Allogene <a href="https://allogene.com/pipeline/" target="_blank" class="source-link">[48]</a> 。</div>
+            </div>
+        </div>
+
+        <!-- 生产供应链 + 合作生态（增强链接） -->
+        <div class="grid-2">
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-boxes"></i></div>
+                    <h2>生产与供应链</h2>
+                </div>
+                <table style="font-size:0.9rem;">
+                    <tr><th>环节</th><th>核心供应商</th><th>合规/备注</th></tr>
+                    <tr><td>sgRNA</td><td>金斯瑞 (GMP)</td><td><a href="http://www.njbpv.cn/index.php?m=content&c=index&a=show&catid=15&id=5770" target="_blank" class="source-link">战略合作</a> · FDA IND支持</td></tr>
+                    <tr><td>Cas9酶</td><td>恺佧生物 (GMP)</td><td><a href="https://www.zhangtongshe.com/pages/article/article?id=8008" target="_blank" class="source-link">[73]</a> ISO13485</td></tr>
+                    <tr><td>慢病毒</td><td>和元生物</td><td><a href="https://www.obiosh.com/xw/gongsixinwen/2022/1230/3524.html" target="_blank" class="source-link">一站式CMC</a></td></tr>
+                    <tr><td>自动化设备</td><td>贝克曼库尔特</td><td><a href="https://m.bio-equip.com/m/News?newsid=453079239" target="_blank" class="source-link">共建免疫治疗中心</a></td></tr>
+                </table>
+                <div class="mt-4">🏭 7,500㎡ GMP基地 · 年产能5000人份 · 规划12,000㎡商业化厂房 (19,000人份/年)  <a href="https://www.cell.com.cn/mall/list/index/brand/23.html" target="_blank" class="source-link">[82]</a></div>
+            </div>
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-handshake"></i></div>
+                    <h2>战略合作生态</h2>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                    <span class="tag"><i class="fas fa-dna"></i> 金斯瑞 · sgRNA</span>
+                    <span class="tag"><i class="fas fa-flask"></i> 恺佧 · Cas9</span>
+                    <span class="tag"><i class="fas fa-vial"></i> 和元生物 · 病毒</span>
+                    <span class="tag"><i class="fas fa-hospital"></i> PPC佳生 · CRO <a href="https://www.njbpv.cn/index.php?a=show&c=index&catid=15&id=5780&m=content" target="_blank" class="source-link">[58]</a></span>
+                    <span class="tag"><i class="fas fa-robot"></i> 贝克曼 · 自动化</span>
+                </div>
+                <p>与南京大学、中山医院等建立紧密临床合作，销售网络覆盖长三角/北京。定价策略：目标压至10万元以内，探索“无效退款50%”模式 <a href="https://news.sina.cn/bignews/opinion/2025-11-17/detail-infxtkqa3521936.d.html" target="_blank" class="source-link">[66]</a>。</p>
+            </div>
+        </div>
+
+        <!-- 可比估值 + 融资历史 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h2>可比估值 · 财务锚点</h2>
+            </div>
+            <div class="grid-3">
+                <div class="stat-card card-hover">
+                    <div class="stat-value">¥32亿</div>
+                    <div class="stat-label">公允投后估值中枢 (2026)</div>
+                    <div style="margin-top:8px;">≈4.5亿美元，较原启生物折价35-57%</div>
+                </div>
+                <div class="stat-card card-hover">
+                    <div class="stat-value">¥5.2亿</div>
+                    <div class="stat-label">B轮融资 (2021.3) <a href="https://www.emedclub.com/information/view/147e717a8d3f11ebb602b8599f3054c8" target="_blank" class="source-link">[78]</a></div>
+                    <div>高瓴/德诚/蓝驰等参投，投后约30亿</div>
+                </div>
+                <div class="stat-card card-hover">
+                    <div class="stat-value">¥4.2-5.4亿</div>
+                    <div class="stat-label">年研发投入</div>
+                    <div>EV/研发倍数6-7x (行业基准10.7x调整)</div>
+                </div>
+            </div>
+            <table style="margin-top: 28px;">
+                <tr><th>对标公司</th><th>交易/估值</th><th>EV</th><th>阶段</th></tr>
+                <tr><td>亘喜生物 (Gracell)</td><td>AZ收购 $12亿</td><td>¥69.3亿</td><td>II/III期</td></tr>
+                <tr><td>原启生物 (OriCell)</td><td>C1轮 $7000万</td><td>¥58.5亿</td><td>I期完成</td></tr>
+                <tr><td>北恒生物 (Imviva)</td><td>C轮融资中</td><td>¥25-38亿</td><td>I/II期，FDA RMAT</td></tr>
+            </table>
+            <div class="mt-4"><span class="highlight"><i class="fas fa-chart-bar"></i> rNPV核心管线估值：CTD402 ~42亿，CTA313 ~3亿，平台合计约70.5亿 (中央情景)</span> —— 支持当前估值。</div>
+        </div>
+
+        <!-- 风险与投资条款设计（增强） -->
+        <div class="grid-2">
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h2>风险与缓释</h2>
+                </div>
+                <ul style="padding-left: 24px;">
+                    <li style="margin-bottom: 14px;"><strong>核心产品国内注册路径</strong> —— 依赖IIT/NCT，已规划补充IND及关键临床。</li>
+                    <li style="margin-bottom: 14px;"><strong>实体瘤管线早期</strong> —— RD07仍在I期，有效性待验证，但安全性良好。</li>
+                    <li style="margin-bottom: 14px;"><strong>单一供应商风险</strong> —— 已启动二供开发，战略绑定确保供应。</li>
+                    <li style="margin-bottom: 14px;"><strong>通用型CAR-T长期持久性</strong> —— 随访数据持续积累，目前显示深度缓解。</li>
+                    <li><strong>竞争加剧</strong> —— 大型药企入场，北恒凭借成本及先发优势构筑壁垒。</li>
+                </ul>
+            </div>
+            <div class="section card-hover">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-file-signature"></i></div>
+                    <h2>投资条款设计</h2>
+                </div>
+                <div style="background: #f8fafc; border-radius: 24px; padding: 22px;">
+                    <p><i class="fas fa-flag-checkered" style="color:#2563eb;"></i> <strong>里程碑付款：</strong>分4期与临床数据/监管节点挂钩，未达里程碑暂停付款并估值调整。</p>
+                    <p><i class="fas fa-chart-pie"></i> <strong>反稀释：</strong>完全棘轮/加权平均，核心专利失效或重大诉讼触发回购 (年化8-10%)。</p>
+                    <p><i class="fas fa-user-lock"></i> <strong>团队锁定：</strong>创始人及核心技术团队4年服务期+竞业禁止，股权分4年兑现。</p>
+                    <p><i class="fas fa-sign-out-alt"></i> <strong>退出路径：</strong>首选M&A (大型药企标的)，次选NASDAQ/HKEX 18A上市。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 团队（含韩露等） + 近期里程碑监控 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-users-cog"></i></div>
+                <h2><a href="https://www.bioheng.com/about.html" target="_blank" class="ext-link">核心团队 & 监控指标</a></h2>
+            </div>
+            <div class="grid-5" style="margin-bottom: 24px;">
+                <div><i class="fas fa-user-tie" style="color:#2563eb;"></i> <strong>任江涛</strong><br><span style="font-size:0.8rem;">创始人/CEO · UCSD博士后</span></div>
+                <div><i class="fas fa-user-tie"></i> <strong>贺小宏</strong><br><span style="font-size:0.8rem;">联合创始人 · 基因编辑</span></div>
+                <div><i class="fas fa-user-tie"></i> <strong>韩露</strong><br><span style="font-size:0.8rem;">联合创始人/COO · 运营/商业化</span></div>
+                <div><i class="fas fa-user-tie"></i> <strong>周亚丽</strong><br><span style="font-size:0.8rem;">研发VP · 抗体发现</span></div>
+                <div><i class="fas fa-user-tie"></i> <strong>邢芸</strong><br><span style="font-size:0.8rem;">临床开发 · IND申报</span></div>
+            </div>
+            <hr>
+            <div class="flex-between">
+                <div><strong>📌 关键监控指标：</strong> CTD402 1b/2期中期分析 · CTA313全球启动 · C轮融资进展 ·  EMA IND提交 · 商业化厂房建设</div>
+                <a href="https://www.bioheng.com/" target="_blank" class="btn-outline" style="padding:8px 20px;">访问官网 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- 投资决策总结 -->
+        <div class="section" style="background: linear-gradient(125deg, #0b1e3a 0%, #1e3a5f 100%); color: white; border: none; box-shadow: 0 20px 30px -8px rgba(0,20,50,0.3);">
+            <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <div style="background: #fbbf24; color: #0f172a; padding: 14px 36px; border-radius: 60px; font-weight: 800; font-size: 1.8rem;">强烈推荐</div>
+                <div style="font-size: 1.3rem; font-weight: 500;">北恒生物 —— 通用型CAR-T全球领跑者，技术壁垒深厚，临床数据卓越，商业化路径清晰。</div>
+            </div>
+            <div class="grid-3" style="margin-top: 32px; color: #e2e8f0;">
+                <div>
+                    <div style="font-size: 2.2rem; font-weight: 800; color: white;">CTD402</div>
+                    <div>CD7 UCAR-T，T系血液瘤蓝海，FDA RMAT+孤儿药，全球1b/2期进行中。</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.2rem; font-weight: 800; color: white;">CTA313</div>
+                    <div>自免新赛道，SLE 100%应答，“免疫重置”机制，有望成为变革性疗法。</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.2rem; font-weight: 800; color: white;">ANSWER®</div>
+                    <div>平台化技术输出，成本优势明显，支撑多管线及国际化。</div>
+                </div>
+            </div>
+            <hr style="border-color: #3b5b8c;">
+            <div class="flex-between">
+                <div><i class="far fa-calendar-alt"></i> 报告日期：2026年4月 · 基于ChiCTR/NIH/专利/财务尽调及官网信息</div>
+                <div><i class="fas fa-rocket"></i> 投资建议：参与C轮融资，目标估值10-15亿美元，长期持有。</div>
+            </div>
+        </div>
+
+        <!-- 脚注：免责与版权 -->
+        <div class="footer-note">
+            <p style="margin-bottom: 10px;"><strong>免责声明：</strong>本案例研究基于公开信息、行业分析及尽职调查材料整理，仅供专业投资研究与内部参考，不构成任何形式的投资建议。文中涉及预测、估值及前景陈述存在不确定性，投资者应独立判断并自担风险。数据截至2026年4月。部分链接引用自原始报告参考文献。</p>
+            <p>© 2026 SHI Jinxin. All rights reserved. 本页面设计及整合内容由SHI Jinxin完成。信息源链接均来自公开资料及北恒生物官网。</p>
+        </div>
+    </div>
+</body>
+</html>
